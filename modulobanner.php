@@ -61,6 +61,9 @@ class ModuloBanner extends Module
             $this->registerHook('displayFooter');
     }
 
+
+    
+
     public function getContent()
     {
         $id_banner = (int)Tools::getValue('id_banner');
