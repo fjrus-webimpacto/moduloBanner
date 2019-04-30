@@ -22,7 +22,7 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 
-<meta name="description" content="{$meta_description|escape:html:'UTF-8'}"/>   
+<meta name="description" content="{$meta_description|escape:html:'UTF-8'}"/>   class="img-responsive center-block"
 *}
 
 <body>
@@ -32,7 +32,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 clearfix">
             <div class="row row-flex">
                 <div >
-                    <img src="{$path}" class="img-responsive center-block"/>
+                    <img src="{$path}"/>
                 </div>
             </div>
         </div>
