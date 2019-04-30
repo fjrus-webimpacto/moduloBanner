@@ -64,7 +64,7 @@ class ModuloBanner extends Module
     public function getContent()
     {
         $id_banner = (int)Tools::getValue('id_banner');
-        $id_category = (int)Tools::getValue('id_category');
+        //$id_category = (int)Tools::getValue('id_category');
 
         $this->html ="";
 
