@@ -68,16 +68,16 @@ class ModuloBanner extends Module
 
         $this->html ="";
 
-        if (Tools::isSubmit('savemoduloBanner')) {
+        if (Tools::isSubmit('savemodulobanner')) {
             if ($this->processSave()) {
                 return $this->html . $this->renderList();
             } else {
                     return $this->html . $this->renderForm();
             }
-        } elseif (Tools::isSubmit('updatemoduloBanner') || Tools::isSubmit('addmoduloBanner')) {
+        } elseif (Tools::isSubmit('updatemodulobanner') || Tools::isSubmit('addmodulobanner')) {
                 $this->html .= $this->renderForm();
                 return $this->html;
-        } elseif (Tools::isSubmit('deletemoduloBanner')) {
+        } elseif (Tools::isSubmit('deletemodulobanner')) {
                 $banner = new Banner((int)$id_banner);
                 $banner->delete();
                 $this->_clearCache('category.tpl');
@@ -167,7 +167,7 @@ class ModuloBanner extends Module
                 $helper->currentIndex = AdminController::$currentIndex.'&configure='.$this->name;
                 $helper->toolbar_scroll = true;
                 $helper->title = $this->displayName;
-                $helper->submit_action = 'savemoduloBanner';
+                $helper->submit_action = 'savemodulobanner';
                 $helper->fields_value = $this->getFormValues();
 
                 return $helper->generateForm(array(array('form' => $fields_form)));
@@ -224,7 +224,7 @@ class ModuloBanner extends Module
         if ($id_banner = Tools::getValue('id_banner')) {
              $banner = new Banner((int)$id_banner);
                     
-            if (isset($_REQUEST['savemoduloBanner'])) {
+            if (isset($_REQUEST['savemodulobanner'])) {
                 $banner->id_banner = Tools::getValue('id_banner');
                 $banner->id_category = Tools::getValue('id_category');
                 $banner->hook = Tools::getValue('hook');
@@ -245,7 +245,7 @@ class ModuloBanner extends Module
             }
         } else {
                 $banner = new Banner((int)$id_banner);
-            if (isset($_REQUEST['savemoduloBanner'])) {
+            if (isset($_REQUEST['savemodulobanner'])) {
                 $banner->id_banner = Tools::getValue('id_banner');
                 $banner->id_category = Tools::getValue('id_category');
                 $banner->hook = Tools::getValue('hook');
