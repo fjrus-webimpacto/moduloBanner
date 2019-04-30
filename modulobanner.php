@@ -290,7 +290,6 @@ class ModuloBanner extends Module
                 $fields_value['imagen'] = "";
         }
         $fields_value['id_banner'] = $id_banner;
-        ddd($fields_value);
         return $fields_value;
     }
 
