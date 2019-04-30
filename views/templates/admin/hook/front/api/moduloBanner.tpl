@@ -29,10 +29,10 @@
 <body>
     {if $image}
     <div class="clearfix"></div>
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 clearfix" style="height: 15%; width: 100%">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 clearfix">
             <div class="row row-flex">
                 <div >
-                    <img src="{$path}" class="img-responsive center-block" style="height: 100%; width: 100%"/>
+                    <img src="{$path}" class="img-responsive center-block"/>
                 </div>
             </div>
         </div>
