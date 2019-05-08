@@ -81,22 +81,16 @@ class ModuloBanner extends Module
                 $banner = new Banner((int)$id_banner);
                 $banner->delete();
                 $this->_clearCache('category.tpl');
-                Tools::redirectAdmin(AdminController::$currentIndex.'&configure='.$this->name.
-                '&token='.Tools::getAdminTokenLite('AdminModules'));
+                Tools::redirectAdmin(AdminController::$currentIndex.'&configure='.$this->name.'&token='.
+                Tools::getAdminTokenLite('AdminModules'));
         } else {
                 $this->html .= $this->renderList();
                 return $this->html;
         }
     }
 
-    public function postProcess()
-    {
-    }
-    
     protected function renderForm()
     {
-            // img
-            // añade prefijo, nombre imagen y jpg
             $image_size = "";
             $image_url ="";
                     
@@ -140,7 +134,7 @@ class ModuloBanner extends Module
                             'name' => 'hook',
                             'desc' => $this->l('Seleccione una Posicion '),
                             'options' => array(
-                                'query' => $this->arrayHooks(), // el true es que solo los que estan activos
+                                'query' => $this->arrayHooks(),
                                 'id' => 'hooks',
                                 'name' => 'firstname',
                             )
@@ -151,9 +145,8 @@ class ModuloBanner extends Module
                     ),
                     'buttons' => array(
                         array(
-                            'href' => AdminController::$currentIndex.'&configure='.$this->name.
-                            '&token='.Tools::getAdminTokenLite('AdminModules'),
-
+                            'href' => AdminController::$currentIndex.'&configure='.$this->name.'&token='.
+                            Tools::getAdminTokenLite('AdminModules'),
                             'title' => $this->l('Back to list'),
                             'icon' => 'process-icon-back'
                         )
@@ -203,18 +196,15 @@ class ModuloBanner extends Module
                 $helper->show_toolbar = true;
                 $helper->imageType = 'jpg';
                 $helper->toolbar_btn['new'] = array(
-                    'href' => AdminController::$currentIndex.'&configure='.$this->name.
-                    '&add'.$this->name.'&token='.Tools::getAdminTokenLite('AdminModules'),
-
+                    'href' => AdminController::$currentIndex.'&configure='.$this->name.'&add'.$this->name.'&token='.
+                    Tools::getAdminTokenLite('AdminModules'),
                     'desc' => $this->l('Add new')
                 );
                 $helper->title = $this->displayName;
                 $helper->table = $this->name;
                 $helper->token = Tools::getAdminTokenLite('AdminModules');
                 $helper->currentIndex = AdminController::$currentIndex.'&configure='.$this->name;
-
-                $content = $this->getListContent($this->context->language->id);
-                
+                $content = $this->getListContent($this->context->language->id);   
                 return $helper->generateList($content, $this->fields_list);
     }
 
