@@ -46,6 +46,11 @@ class ModuloBanner extends Module
         $this->description = $this->l('Modulo para insertar banner');
         $this->confirmUninstall = $this->l('Are you sure you want to uninstall?');
         
+        $this->fieldImageSettings = array(
+            'name' => 'image',
+            'dir' => 'object',
+        );
+
         if (!Configuration::get('modulobanner')) {
                 $this->warning = $this->l('No name provided');
         }
