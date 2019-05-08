@@ -230,8 +230,6 @@ class ModuloBanner extends Module
                 $banner->hook = Tools::getValue('hook');
 
                 $path = dirname(__FILE__).'/img/';
-                    //$info = pathinfo($_FILES['imagen']['name']);
-                    //$ext = $info['extension']; // get the extension of the file
                 $newname = $_FILES['imagen']['name'];
 
                 $banner->imagen = $newname;
