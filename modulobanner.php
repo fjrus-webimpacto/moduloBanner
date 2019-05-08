@@ -204,7 +204,7 @@ class ModuloBanner extends Module
                 $helper->table = $this->name;
                 $helper->token = Tools::getAdminTokenLite('AdminModules');
                 $helper->currentIndex = AdminController::$currentIndex.'&configure='.$this->name;
-                $content = $this->getListContent($this->context->language->id);   
+                $content = $this->getListContent($this->context->language->id);
                 return $helper->generateList($content, $this->fields_list);
     }
 
