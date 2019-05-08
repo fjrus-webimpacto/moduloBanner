@@ -27,9 +27,12 @@
 $sql = array();
 
 $sql[] = 'CREATE TABLE IF NOT EXISTS `' . _DB_PREFIX_ . 'banners` (
-    `id_banner` int(11) NOT NULL AUTO_INCREMENT, `id_category` VARCHAR(45) NOT NULL, `hook` VARCHAR(45) NOT NULL, 
-    `imagen` TEXT(50) NOT NULL, PRIMARY KEY  (`id_banner`)
-) ENGINE=' . _MYSQL_ENGINE_ . ' DEFAULT CHARSET=utf8;';
+  `id_banner` int(11) NOT NULL AUTO_INCREMENT,
+  `id_category` int(11) NOT NULL,
+  `hook` VARCHAR(255) NOT NULL,
+  `imagen` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id_banner`)
+  ) ENGINE=' . _MYSQL_ENGINE_ . ' DEFAULT CHARSET=utf8;';
 
 foreach ($sql as $query) {
     if (Db::getInstance()->execute($query) == false) {
